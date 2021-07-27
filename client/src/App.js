@@ -65,18 +65,18 @@ function App() {
         <div className="navbar" id="navbar">
           <div className="leftSide">
             <div className="logoDiv">
-              <Link to="/"><img src={Logo} alt="My logo" className="logo"/></Link>
+              <Link to="/" alt="retout_accueil"><img src={Logo} alt="My logo" className="logo"/></Link>
             </div>
             <div className="links">
               {!authState.status || localStorage.getItem("") ? (
                 <>
-                  <Link to="/login">Connexion</Link>
-                  <Link to="/registration">Inscription</Link>
+                  <Link to="/login" alt="se_connecter">Connexion</Link>
+                  <Link to="/registration" alt="s'inscrire">Inscription</Link>
                 </>
               ) : (
                 <>
-                  <Link to="/"><HomeIcon></HomeIcon></Link>
-                  <Link to="/createpost"><PostAdd></PostAdd></Link>
+                  <Link to="/" alt="retour_accueil"><HomeIcon></HomeIcon></Link>
+                  <Link to="/createpost" alt="creer_un_poste"><PostAdd></PostAdd></Link>
                 </>
               )}
             </div>
@@ -88,10 +88,10 @@ function App() {
             ) : (
               <>
                 <h1>{authState.userName}</h1>
-                <Link to={`/profile/${authState.id}`}>
+                <Link to={`/profile/${authState.id}`} alt="mon-compte">
                   <AccountCircle></AccountCircle>
                 </Link>
-                <Link to={'/login'}>
+                <Link to={'/login'} alt="se_deconnecter">
                   {authState.status && <ExitToApp onClick={logout}></ExitToApp>}
                 </Link>
               </>

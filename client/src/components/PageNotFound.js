@@ -12,7 +12,7 @@ function PageNotFound(){
             <h1>Erreur 404 - Page non trouvée :/</h1>
             <h3>
                 {""}
-                Retournez à la page d'accueil : <Link to="/">Page d'accueil</Link>
+                Retournez à la page d'accueil : <Link to="/" alt="retour_accueil">Page d'accueil</Link>
             </h3>
         </div>
     )

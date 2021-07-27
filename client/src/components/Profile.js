@@ -32,7 +32,7 @@ function Profile(){
                 setListOfPosts(response.data);
             });
         }
-    }, []);
+    }, [history, id]);
         
         
 

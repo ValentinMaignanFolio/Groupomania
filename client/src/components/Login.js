@@ -30,7 +30,8 @@ function Login(){
         <div className="loginPage">
             <div className="loginForm">
                 <label>Nom utilisateur :</label>
-                <input 
+                <input
+                    alt="entrer_votre_identifiant"
                     type="text"
                     placeholder="Nom utilisateur (ex: Charlie)"
                     onChange={(event) => {
@@ -38,7 +39,8 @@ function Login(){
                     }}
                 />
                 <label>Mot de passe :</label>
-                <input 
+                <input
+                    alt="entrer_votre_mot_de_passe"
                     type="password"
                     placeholder="Votre mot de passe"
                     onChange={(event) => {
@@ -46,7 +48,7 @@ function Login(){
                     }}
                 />
 
-                <button onClick={login}>Connexion</button>
+                <button alt="se_connecter" onClick={login}>Connexion</button>
             </div>
         </div>
     );

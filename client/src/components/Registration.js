@@ -10,6 +10,7 @@ function Registration(){
     const [image, setImage] = useState("");
     const [loading, setLoading] = useState(false);
     const [bio, setBio] = useState("");
+    let history = useHistory();
 
     /*Ajout d'une image de profil via cloudinary*/
 
@@ -30,7 +31,7 @@ function Registration(){
         if(!localStorage.getItem("accessToken")){
             history.push("/registration");
         }
-    }, []);
+    }, [history]);
 
     const registration = () => {
         const data = {
@@ -123,7 +124,7 @@ function Registration(){
             }
     }
 
-    let history = useHistory();
+    
    
     return (
     
@@ -134,11 +135,12 @@ function Registration(){
             <p id="imageMessage">Choisissez votre plus beau profil !</p>
                 <div className="uploadProfileImage">
                     {loading ? <h1>Loding...</h1>:<img className="settings-image profilePicture" alt="" src={image}/>}
-                    <input className="uploadImage" type="file" name="file" onChange={uploadImage}/>
+                    <input alt="ajouter_image_profile"className="uploadImage" type="file" name="file" onChange={uploadImage}/>
                 </div>
                 <label>Pseudo</label>
                 <p id="pseudoMessage">Doit contenir entre 5 et 15 caractères</p>
                 <input
+                    alt="renseigner_un_pseudo"
                     type="text"
                     placeholder="Pseudo"
                     required
@@ -149,6 +151,7 @@ function Registration(){
                 <label>Mot de passe :</label>
                 <p id="passwordMessage">(Entre 8 et 25, 1 Majuscule, 1 Minuscule, 1 caractère spécial, 1 chiffre)</p>
                 <input
+                    alt="renseigner_un_mot_de_passe"
                     type="password"
                     placeholder="Mot de passe"
                     required
@@ -159,6 +162,7 @@ function Registration(){
                 <label>Bio :</label>
                 <p id="bioMessage">Entre 30 et 100 caractères demandés</p>
                 <input
+                    alt="renseigner_une_bio"
                     type="text"
                     id="bioInput"
                     placeholder="Bio"
@@ -168,7 +172,7 @@ function Registration(){
                     }}
                 />
                 <Link to='/'>
-                <button onClick={submit}>Inscription</button>
+                <button alt="valider_son_profil" onClick={submit}>Inscription</button>
                 </Link>
             </form>
         </div>

@@ -36,7 +36,7 @@ function Home(){
                 );
             });
         }
-    }, []);
+    }, [history]);
 
     /*Récupération des likes liés aux posts pour affichage*/
 
@@ -83,7 +83,7 @@ function Home(){
     return (
         <div className="homePage">
             <div className="searchBar">
-                <button onClick={() => {
+                <button alt="rechercher_un_utilisateur" onClick={() => {
                     document.getElementById("postsResearch").style.display = "none";
                     document.getElementById("profileResearch").style.display = "block";
                     document.getElementById("contentResearch").style.display = "none";
@@ -93,7 +93,7 @@ function Home(){
                     document.getElementById("contentSearchLabel").style.display = "none";
                     document.getElementById("closeResearch").style.display = "block";
                 }}>Rechercher un utilisateur</button>
-                <button onClick={() => {
+                <button alt="rechercher_une_publication" onClick={() => {
                     document.getElementById("profileResearch").style.display = "none";
                     document.getElementById("postsResearch").style.display = "block";
                     document.getElementById("contentResearch").style.display = "none";
@@ -103,7 +103,7 @@ function Home(){
                     document.getElementById("contentSearchLabel").style.display = "none";
                     document.getElementById("closeResearch").style.display = "block";
                 }}>Rechercher une publication</button>
-                    <button onClick={() => {
+                    <button alt="rechercher_un_contenu" onClick={() => {
                     document.getElementById("profileResearch").style.display = "none";
                     document.getElementById("postsResearch").style.display = "none";
                     document.getElementById("contentResearch").style.display = "block";
@@ -116,6 +116,7 @@ function Home(){
                 <label id="profileSearchLabel">Rechercher un utilisateur</label>
                 <div id="profileResearch">
                     <input
+                        atl="entrer_nom_utilisateur"
                         type="text"
                         name="searchBar"
                         id="searchBar"
@@ -139,6 +140,7 @@ function Home(){
                 <label id="postsSearchLabel">Rechercher une publication</label>
                 <div id="postsResearch">
                     <input
+                        atl="entrer_nom_titre_poste"
                         type="text"
                         name="searchBar"
                         id="searchBar2"
@@ -162,6 +164,7 @@ function Home(){
                 <label id="contentSearchLabel">Rechercher un contenu</label>
                 <div id="contentResearch">
                     <input
+                        atl="entrer_contenu_recherche"
                         type="text"
                         name="searchBar"
                         id="searchBar3"

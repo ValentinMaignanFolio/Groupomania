@@ -11,6 +11,7 @@ function CreatePost(){
     const [postText, setPostText] = useState("");
     const [image, setImage] = useState("");
     const [loading, setLoading] = useState(false);
+    let history = useHistory();
 
     /*Upload des images via le service en ligne cloudinary*/
 
@@ -31,7 +32,7 @@ function CreatePost(){
         if(!localStorage.getItem("accessToken")){
             history.push("/login");
         }
-    }, []);
+    }, [history]);
  
     
     /*Au submit vérification de la validité des différents champs du formulaire*/
@@ -84,9 +85,6 @@ function CreatePost(){
             post();
         }
     }
-
-    let history = useHistory();
-
    
     return (
     
@@ -101,6 +99,7 @@ function CreatePost(){
             <label>Title :</label>
             <p id="titleMessage">Entre 5 et 15 caractères</p>
             <input
+                alt="titre_du_message"
                 type="text"
                 placeholder="title"
                 onChange={(event) => {
@@ -110,6 +109,7 @@ function CreatePost(){
             <label>Poste :</label>
             <p id="postTextMessage">Décrivez votre contenu (30 à 300 caractères)</p>
             <input
+                alt="texte_de_la_publication"
                 type="text"
                 placeholder="postText"
                 onChange={(event) => {
@@ -117,7 +117,7 @@ function CreatePost(){
                 }}
             />
             
-            <button onClick={submit}>Submit</button>
+            <button alt="valider_la_publication" onClick={submit}>Submit</button>
         </form>
         <div id="linkBackHome">
         

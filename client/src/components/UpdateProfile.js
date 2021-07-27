@@ -15,7 +15,7 @@ function UpdateUser(){
         if(!localStorage.getItem("accessToken")){
             history.push('/login');
         }
-    }, []);
+    }, [history]);
 
     const uploadImage = e => {
         const files = e.target.files[0];
@@ -107,13 +107,14 @@ function UpdateUser(){
                     <label>Choisir une nouvelle photo de profil</label>
                     <p id="uploadMessage">Attendre que la photo apparaisse pour valider</p>
                     {loading ? <h1>Loding...</h1>:<img className="profilePicture" alt="" src={newImage}/>}
-                    <input className="uploadImage" type="file" name="file" onChange={uploadImage}/>
+                    <input alt="choisir_nouvelle_photo_de_profil" className="uploadImage" type="file" name="file" onChange={uploadImage}/>
                 </div>
-                <button onClick={updateImage} >Valider la nouvelle photo de profil</button>
+                <button alt="valider_la_nouvelle_photo" onClick={updateImage} >Valider la nouvelle photo de profil</button>
                 <div className="updateBio">
                     <label>Modifier votre bio</label>
                     <p id="bioMessage">Entre 30 et 100 caractères demandés</p>
                     <input 
+                        alt="renseigner_une_nouvelle_bio"
                         type="text" 
                         placeholder="Votre nouvelle bio"
                         onChange={(event) => {
@@ -121,10 +122,11 @@ function UpdateUser(){
                         }}
                     />
                 </div>
-                <button onClick={updateBio} >Valider les modifications</button>
+                <button alt="valider_la_nouvelle_bio" onClick={updateBio} >Valider la nouvelle bio</button>
                 <div className="updatePassword">
                     <label>Modifier votre mot de passe</label>
-                    <input 
+                    <input
+                        alt="entrer_ancien_mot_de_passe"
                         type="password" 
                         placeholder="Ancien mot de passe..." 
                         onChange={(event) => {
@@ -132,6 +134,7 @@ function UpdateUser(){
                         }}
                     />
                     <input 
+                        alt="entrer_nouveau_mot_de_passe"
                         type="password" 
                         placeholder="Nouveau mot de passe..." 
                         onChange={(event) => {
@@ -139,7 +142,7 @@ function UpdateUser(){
                         }}
                     />
                 </div>
-                <button onClick={updatePassword} >Valider mon nouveau mot de passe</button>
+                <button alt="valider_nouveau_mot_de_passe" onClick={updatePassword} >Valider mon nouveau mot de passe</button>
             </div>
         </div>
     );

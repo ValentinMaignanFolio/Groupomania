@@ -52,7 +52,7 @@ function Post(){
             setComments(response.data);
         });
         }
-    }, []);
+    }, [history, id]);
 
     /*Définition de la logique pour l'ajout d'un commentaire*/
 
@@ -178,6 +178,7 @@ function Post(){
                 </div>
                 <div className="updatePost">
                     <input 
+                        alt="entrer_un_nouveau_titre"
                         className="newtitle"
                         type="text"
                         placeholder="Modifier le titre ici (5 à 15 caractères)..."
@@ -186,13 +187,14 @@ function Post(){
                         }}
                     >   
                     </input>
-                    <button className="updateBtn" onClick={() => {
+                    <button alt="valider_nouveau_titre" className="updateBtn" onClick={() => {
                         editPost("title");
                     }}>Ok</button>
                 </div>
                 <div className="postText">{postObject.postText}</div>
                 <div className="updatePost">
-                    <input 
+                    <input
+                        alt="entrer_une_nouvelle_description"
                         className="newpostText"
                         type="text"
                         placeholder="Modifier le texte de la publication ici (30 à 300 caractères)..."
@@ -201,7 +203,7 @@ function Post(){
                         }}
                     > 
                     </input>
-                    <button className="updateBtn" onClick={() => {
+                    <button alt="valider_nouvelle_description" className="updateBtn" onClick={() => {
                         editPost("postText")
                     }}>Ok</button>
                 </div>
@@ -211,10 +213,10 @@ function Post(){
                         <img alt="image_du_poste" id="postImage" src={postObject.image}/>
                     )}
                     <div className="updatePostPicture">
-                        <input className="uploadImage" id="uploadImage" type="file" name="Nouvelle image" onChange={uploadImage} onClick={() => {
+                        <input alt="modifier_image_poste" className="uploadImage" id="uploadImage" type="file" name="Nouvelle image" onChange={uploadImage} onClick={() => {
                         document.getElementById("uploadImageView").style.display = "block"}}/>
-                        {loading ? <h1>Loding...</h1>:<img id="uploadImageView" className="settings-image" src={newImage}/>}
-                        <button onClick={() => {
+                        {loading ? <h1>Loding...</h1>:<img id="uploadImageView" className="settings-image" alt="" src={newImage}/>}
+                        <button alt="valider_nouvelle_image" onClick={() => {
                                 editPost("image")
                         }}>Remplacer l'image</button>
                     </div>
@@ -226,7 +228,8 @@ function Post(){
             </div>
             <div className="bottomPost">
                 <div className="addComment">
-                    <input 
+                    <input
+                        alt="commenter_la_publication"
                         type="text" 
                         placeholder="Votre commentaire..." 
                         autoComplete="off" 
@@ -235,7 +238,7 @@ function Post(){
                             setNewComment(event.target.value);
                         }}
                     />
-                    <button className="send" onClick={addComment}>Envoyer <Send/></button>
+                    <button alt="poster_son_commentaire" className="send" onClick={addComment}>Envoyer <Send/></button>
                 </div>
                 <div className="listofComment">
                     {comments.map((comment, key) => {
@@ -245,14 +248,14 @@ function Post(){
                                 <label>{comment.userName} : </label>
                                 {comment.commentBody}
                                 </div>
-                                    <DeleteForever onClick={() => {deleteComment(comment.id)}}/>
+                                    <DeleteForever alt="supprimer_commentaire" onClick={() => {deleteComment(comment.id)}}/>
                             </div>
                         );
                     })};
                 </div>
             </div>
             <div className="deletePost">
-            <Link to="/"><button className="postButtons postBtn-1">Retour Accueil</button></Link>
+            <Link to="/" alt="retour_accueil"><button className="postButtons postBtn-1">Retour Accueil</button></Link>
             <button className="postButtons postBtn-2"
                 onClick={() => {
                     deletePost(postObject.id);
@@ -291,6 +294,7 @@ function Post(){
                 <div className="bottomPost">
                     <div className="addComment">
                         <input 
+                            alt="ajouter_un_commentaire"
                             type="text" 
                             placeholder="Votre commentaire..." 
                             autoComplete="off" 
@@ -299,7 +303,7 @@ function Post(){
                                 setNewComment(event.target.value);
                             }}
                         />
-                        <button className="send" onClick={addComment}>Envoyer <Send/></button>
+                        <button alt="poster_son_commentaire" className="send" onClick={addComment}>Envoyer <Send/></button>
                     </div>
                     <div className="listofComment">
                         {comments.map((comment, key) => {
@@ -310,14 +314,14 @@ function Post(){
                                     {comment.commentBody}
                                     </div>
                                     {authState.userName === comment.userName && (
-                                        <DeleteForever onClick={() => {deleteComment(comment.id)}}/>
+                                        <DeleteForever alt="supprimer_commentaire" onClick={() => {deleteComment(comment.id)}}/>
                                     )}
                                 </div>
                             );
                         })};
                     </div>
                 </div>
-                <Link to="/"><button className="postButtons postBtn-1">Retour Accueil</button></Link>
+                <Link to="/" alt="retour_accueil"><button className="postButtons postBtn-1">Retour Accueil</button></Link>
             </div>
         )
     }
