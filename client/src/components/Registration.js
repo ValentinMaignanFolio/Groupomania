@@ -10,7 +10,6 @@ function Registration(){
     const [image, setImage] = useState("");
     const [loading, setLoading] = useState(false);
     const [bio, setBio] = useState("");
-    const [usersNameList, setUsersNameList] = useState("")
 
     /*Ajout d'une image de profil via cloudinary*/
 
@@ -134,7 +133,7 @@ function Registration(){
             <label>Photo de profil</label>
             <p id="imageMessage">Choisissez votre plus beau profil !</p>
                 <div className="uploadProfileImage">
-                    {loading ? <h1>Loding...</h1>:<img className="settings-image profilePicture" src={image}/>}
+                    {loading ? <h1>Loding...</h1>:<img className="settings-image profilePicture" alt="" src={image}/>}
                     <input className="uploadImage" type="file" name="file" onChange={uploadImage}/>
                 </div>
                 <label>Pseudo</label>

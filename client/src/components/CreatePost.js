@@ -95,7 +95,7 @@ function CreatePost(){
         <form className="formPost" id="formPost">
             <label>Image ou Gif (optionnel)</label>
             <p id="uploadMessage">Attendre que la photo apparaisse pour valider</p>
-            {loading ? <h1>Loding...</h1>:<img className="settings-image" src={image}/>}
+            {loading ? <h1>Loding...</h1>:<img className="settings-image" alt="" src={image}/>}
             <input className="uploadImage" type="file" name="file" onChange={uploadImage}/>
             
             <label>Title :</label>

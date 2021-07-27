@@ -88,7 +88,7 @@ function Post(){
             })
             .then(() => {
                 setComments(comments.filter((val) => {
-                    return val.id != id;
+                    return val.id !== id;
                 })
             );
         });
@@ -207,7 +207,9 @@ function Post(){
                 </div>
                 
                 <div className="postPicture">
-                    <img id="postImage" src={postObject.image}/>
+                    {postObject.image && (
+                        <img alt="image_du_poste" id="postImage" src={postObject.image}/>
+                    )}
                     <div className="updatePostPicture">
                         <input className="uploadImage" id="uploadImage" type="file" name="Nouvelle image" onChange={uploadImage} onClick={() => {
                         document.getElementById("uploadImageView").style.display = "block"}}/>
@@ -278,7 +280,9 @@ function Post(){
                     </div>
                     
                     <div className="postPicture">
-                        <img src={postObject.image}/>
+                        {postObject.image && (
+                            <img alt="image_du_poste" id="postImage" src={postObject.image}/>
+                        )}
                     </div>
                     <div className="userName">
                         @ {postObject.userName} 

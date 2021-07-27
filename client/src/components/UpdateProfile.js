@@ -1,7 +1,7 @@
 import '../styles/UpdateProfile.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function UpdateUser(){
     const [oldPassword, setOldPassword] = useState("")
@@ -106,7 +106,7 @@ function UpdateUser(){
                 <div className="profilePicture">
                     <label>Choisir une nouvelle photo de profil</label>
                     <p id="uploadMessage">Attendre que la photo apparaisse pour valider</p>
-                    {loading ? <h1>Loding...</h1>:<img className="profilePicture" src={newImage}/>}
+                    {loading ? <h1>Loding...</h1>:<img className="profilePicture" alt="" src={newImage}/>}
                     <input className="uploadImage" type="file" name="file" onChange={uploadImage}/>
                 </div>
                 <button onClick={updateImage} >Valider la nouvelle photo de profil</button>

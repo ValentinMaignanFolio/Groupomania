@@ -51,7 +51,7 @@ function Profile(){
                 <h1>Découvrez le profil de @{userName} </h1>
                 <div className="basicInfo">
                     {""}
-                    <img className="profilePicture" src={image}></img>
+                    <img className="profilePicture" alt="photo_utilisateur" src={image}></img>
                     <p>{bio}</p>
                 </div>
                 <div className="updateDeleteProfile">
@@ -84,13 +84,15 @@ function Profile(){
                             >
                                 {value.postText}
                             </div>
+                            {value.image && (
                             <div className="postPicture"
                                 onClick={() => {
                                     history.push(`/post/${value.id}`)
                                 }}
                             >
-                                <img src={value.image}></img>
+                                <img alt="image_du_poste" id="postImage" src={value.image}/>
                             </div>
+                            )}
                             <div className="footer">
                                 <div className="username">
                                     @ {value.userName}

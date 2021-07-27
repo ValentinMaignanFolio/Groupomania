@@ -80,8 +80,6 @@ function Home(){
         setSearchTerm(value);
     };
 
-    
-
     return (
         <div className="homePage">
             <div className="searchBar">
@@ -219,14 +217,16 @@ function Home(){
                             >
                                 {value.postText}
                             </div>
+                            {value.image && (
                             <div className="postPicture">  
-                                <img 
+                                <img alt="image_du_poste"
                                     onClick={() => {
                                         history.push(`/post/${value.id}`)
                                     }}
                                     src={value.image}>
                                 </img>
                             </div>
+                            )}
                             <div className="footer">
                                 <div className="username">
                                     <Link to={`/profile/${value.UserId}`}> @ {value.userName}</Link>
