@@ -1,44 +1,45 @@
 Création d'un réseau social pour l'entreprise Groupomania
 REACTJS / NODE.JS / SEQUELIZE / MYSQL
 
-1/ Cloner le projet
+<b>1/ Cloner le projet</b>
 
-2/ Créer un dossier config à la racine du dossier server contenant un fichier config.json contenant le code ci-dessous :
+<b>2/ Créer un dossier config à la racine du dossier server contenant un fichier config.json contenant le code ci-dessous :<b> 
 
-{
-"development": {
-"username": "votre identifiant",
-"password": "votre mot de passe",
-"database": "nom de votre BDD",
-"host": "hebergement de votre BDD",
-"dialect": "mysql"
-},
-"test": {
-"username": "root",
-"password": null,
-"database": "database_test",
-"host": "127.0.0.1",
-"dialect": "mysql"
-},
-"production": {
-"username": "root",
-"password": null,
-"database": "database_production",
-"host": "127.0.0.1",
-"dialect": "mysql"
-}
-}
+<p>
+  {</br>
+    "development": {</br>
+      "username": "votre identifiant",</br>
+      "password": "votre mot de passe",</br>
+      "database": "nom de votre BDD",</br>
+      "host": "hebergement de votre BDD",</br>
+      "dialect": "mysql"</br>
+    },</br>
+    "test": {</br>
+      "username": "root",</br>
+      "password": null,</br>
+      "database": "database_test",</br>
+      "host": "127.0.0.1",</br>
+      "dialect": "mysql"</br>
+    },</br>
+    "production": {</br>
+      "username": "root",</br>
+      "password": null,</br>
+      "database": "database_production",</br>
+      "host": "127.0.0.1",</br>
+      "dialect": "mysql"</br>
+    }</br>
+  }</br>
+</p>
+</br>
+<b>3/ Créer un fichier .env à la racine du dossier server et préciser la valeur de la variable d'environnement TOKEN<b></br></br>
 
-3/ Créer un fichier .env à la racine du dossier server et préciser la valeur de la variable d'environnement TOKEN
+  --> SECRET_TOKEN ="votre valeur"
 
---> SECRET_TOKEN ="votre valeur"
+<b>4/ Côté serveur <b></br></br>
+  --> npm install express</br>
+  --> npm start</br>
+  
 
-4/ Côté serveur
-
---> npm install express
---> npm start
-
-5/ Côté client
-
---> npm install --save-dev nodemon
---> npm start
+<b>5/ Côté client<b></br></br>
+  --> npm install --save-dev nodemon</br>
+  --> npm start</br>
